@@ -1,4 +1,4 @@
-# BCAN-AoIP
+# BCAN
 Send UDP stream over any network between any os
 
 ![image](https://user-images.githubusercontent.com/21957617/206717972-94a0e5f4-df21-4798-85d8-a3a9f745b81a.png)
