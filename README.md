@@ -17,7 +17,7 @@ Usable Multi Os CLI interface
 - [ ] Linux
 - [ ] Mac
 
-Capable of accepting or changing unicast IP addresses
+## Capable of accepting or changing unicast IP addresses
 - [x] Done
 
 ## MiMo
