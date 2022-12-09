@@ -11,26 +11,26 @@ Welcome to BCAN
 
 A list of things that need to be done 
 
-## CLI Interface
+### CLI Interface
 Usable Multi Os CLI interface 
 - [x] Windows 10
 - [ ] Linux
 - [ ] Mac
 
-## Capable of accepting or changing unicast IP addresses
+### Capable of accepting or changing unicast IP addresses
 - [x] Done
 
-## MiMo
+### MiMo
 Will need to be able to send multiple inputs to multiple outputs.
 Unicast and Multicast
 
-## PTP
+### PTP
 - [ ] PTPv2
 
-## Subscription Ledger
+### Subscription Ledger
 Will need to be able to see what is being sent and where.
 First from a specific server. then for the entire network.
 
 
-## Requirements
+#### Requirements
 python-pyaudio
