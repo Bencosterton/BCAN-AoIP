@@ -18,7 +18,7 @@ Usable Multi Os CLI interface
 - [ ] Mac
 
 Capable of accepting or changing unicast IP addresses
-- [x] 
+- [x] Done
 
 ## MiMo
 Will need to be able to send multiple inputs to multiple outputs.
