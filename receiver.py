@@ -49,7 +49,7 @@ if __name__ == "__main__":
     FORMAT = pyaudio.paInt16
     CHUNK = 1024
     CHANNELS = 2
-    RATE = 44100
+    RATE = 48000
 
     Audio = pyaudio.PyAudio()
 
