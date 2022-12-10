@@ -47,9 +47,9 @@ def record(stream, CHUNK):
 
 if __name__ == "__main__":
     CHUNK = 1024
-    FORMAT = pyaudio.paInt24 #Audio Codec (last two digits are the bit rate
+    FORMAT = pyaudio.paInt16 #Audio Codec (last two digits are the bit rate
     CHANNELS = 2 #Stereo or Mono
-    RATE = 48000 #Sampling Rate
+    RATE = 44100 #Sampling Rate
 
     Audio = pyaudio.PyAudio()
 
