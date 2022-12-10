@@ -60,7 +60,6 @@ if __name__ == "__main__":
                     frames_per_buffer = CHUNK,
                     )
 
-#Initialize Threads
     AudioThread = Thread(target = record, args = (stream, CHUNK,))
     udpThread = Thread(target = udpStream)
     AudioThread.start()
