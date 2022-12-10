@@ -46,10 +46,10 @@ def play(stream, CHUNK):
                     stream.write(frames.pop(0), CHUNK)
 
 if __name__ == "__main__":
-    FORMAT = pyaudio.paInt24
-    CHUNK = 2048
+    FORMAT = pyaudio.paInt16
+    CHUNK = 1024
     CHANNELS = 2
-    RATE = 48000
+    RATE = 44100
 
     Audio = pyaudio.PyAudio()
 
