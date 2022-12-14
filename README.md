@@ -24,8 +24,9 @@ Usable Multi Os CLI interface
 Will need to be able to send multiple inputs to multiple outputs.
 Unicast and Multicast
 
-### PTP
+### Sync
 - [ ] PTPv2
+- [x] NTP
 
 ## Dicovery
 
