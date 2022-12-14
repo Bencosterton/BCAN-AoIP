@@ -28,10 +28,10 @@ Unicast and Multicast
 - [ ] PTPv2
 - [x] NTP
 
-## Dicovery
+### Dicovery
 - [ ] Implementation of SAP or mDNS
 
-## Subscription Ledger
+### Subscription Ledger
 Will need to be able to see what is being sent and where.
 First from a specific server. then for the entire network.
 
