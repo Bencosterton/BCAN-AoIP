@@ -29,7 +29,6 @@ Unicast and Multicast
 - [x] NTP
 
 ## Dicovery
-
 - [ ] Implementation of SAP or mDNS
 
 ## Subscription Ledger
