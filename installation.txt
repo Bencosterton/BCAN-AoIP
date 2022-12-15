@@ -1,0 +1,12 @@
+Windows 10:
+
+Install Python3
+pip install pyaudio
+
+
+
+macOS
+
+Install Python3
+brew install portaudio
+pip install pyaudio
