@@ -15,7 +15,7 @@ A list of things that need to be done
 Usable Multi OS CLI interface 
 - [x] Windows 10
 - [ ] Linux
-- [x] Mac
+- [x] macOS
 
 ### Run on WiFi and Eth
 - [x] WiFi
