@@ -12,7 +12,7 @@ Welcome to BCAN
 A list of things that need to be done 
 
 ### CLI Interface
-Usable Multi Os CLI interface 
+Usable Multi OS CLI interface 
 - [x] Windows 10
 - [ ] Linux
 - [x] Mac
