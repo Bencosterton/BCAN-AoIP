@@ -15,7 +15,7 @@ A list of things that need to be done
 Usable Multi Os CLI interface 
 - [x] Windows 10
 - [ ] Linux
-- [ ] Mac
+- [x] Mac
 
 ### Capable of accepting or changing unicast IP addresses
 - [x] Done
