@@ -17,6 +17,10 @@ Usable Multi OS CLI interface
 - [ ] Linux
 - [x] Mac
 
+### Run on WiFi and Eth
+- [x] WiFi
+- [x] Eth
+
 ### Capable of accepting or changing unicast IP addresses
 - [x] Done
 
