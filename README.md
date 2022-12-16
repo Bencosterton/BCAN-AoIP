@@ -29,6 +29,8 @@ Usable Multi OS CLI interface
 ### MiMo
 Will need to be able to send multiple inputs to multiple outputs.
 Unicast and Multicast
+- [ ] Multi Input
+- [x] Multi Output
 
 ### Sync
 - [ ] PTPv2
