@@ -14,8 +14,10 @@ A list of things that need to be done
 ### CLI Interface
 Usable Multi OS CLI interface 
 - [x] Windows 10
-- [ ] Linux
+- [x] Ubuntu Studio 22.04*
 - [x] macOS
+
+*Running app on Linux (tested with Ubuntu Studio 22.04) some erros flag reference ALSA, but it does still work.
 
 ### Run on WiFi and Eth
 - [x] WiFi
