@@ -9,4 +9,11 @@ macOS
 
 Install Python3
 brew install portaudio
+brew link --overwrite portaudio
+pip install pyaudio
+
+
+Ubuntu Studio
+
+sudo apt install build-essential portaudio19-dev python3.10-dev
 pip install pyaudio
