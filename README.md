@@ -47,5 +47,5 @@ First from a specific server. then for the entire network.
 
 
 #### Requirments
-python-pyaudio
-python-ntplib
+- python-pyaudio
+- python-ntplib
