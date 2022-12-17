@@ -31,11 +31,14 @@ UDP = 6980
 frames = []
 
 #NTP Request
+try:
+    t = ntplib.NTPClient()
+    response = t.request('time.google.com', version=3)
+    response.offset
+    #print (datetime.fromtimestamp(response.tx_time, timezone.utc))
+except:
+    pass
 
-t = ntplib.NTPClient()
-response = t.request('time.google.com', version=3)
-response.offset
-#print (datetime.fromtimestamp(response.tx_time, timezone.utc))
 
 #Data send
 def udpStream():
