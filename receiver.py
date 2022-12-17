@@ -4,23 +4,24 @@ from threading import Thread
 from ipaddress import IPv4Interface
 import time
 import sys
-import struct
+#import struct
 
 def wait(amount):
     time.sleep(amount)
     print()
     
-
+NAME = socket.gethostname()
+R_IP = socket.gethostbyname(NAME)
 
 #Welcome message
-    print("""\
+print("""\
  _  _  _       _                                        ______   ______        ______  
 | || || |     | |                          _           (____  \ / _____)  /\  |  ___ \ 
 | || || | ____| | ____ ___  ____   ____   | |_  ___     ____)  ) /       /  \ | |   | |
 | ||_|| |/ _  ) |/ ___) _ \|    \ / _  )  |  _)/ _ \   |  __  (| |      / /\ \| |   | |
 | |___| ( (/ /| ( (__| |_| | | | ( (/ /   | |_| |_| |  | |__)  ) \_____| |__| | |   | |
  \______|\____)_|\____)___/|_|_|_|\____)   \___)___/   |______/ \______)______|_|   |_| 
-  RECEIVER                  """)
+  RECEIVER -""", NAME, R_IP)
 
 wait(1)
 
@@ -32,31 +33,14 @@ NTP_IP = str(IP_NTP_Input)
 
 # NTP Request
 
-NTP_SERVER =(IP_NTP_Input)
-TIME1970 = 2208988800
-    
-def sntp_client():
-    client = socket.socket( socket.AF_INET, 
-                        socket.SOCK_DGRAM )
-    data = '\x1b' + 47 * '\0'
-    client.sendto( data.encode('utf-8'),
-                     ( NTP_SERVER, 123 ))
-    data, address = client.recvfrom( 1024 )
-    if data:
-        print ('Response received from:', address)
-    t = struct.unpack( '!12I', data )[10]
-    t -= TIME1970
-   # print ('\tTime=%s' % time.ctime(t))
-    
-if __name__ == '__main2__':
-        sntp_client()
+
 
 #Receiver address input
         
 IP_input = input("receiver IP: ")
 IP = str(IP_input)
 
-#Data send
+#Data receive
 
 def udpStream(CHUNK):
 
@@ -66,7 +50,7 @@ def udpStream(CHUNK):
     while True:
         soundData, addr = udp.recvfrom(CHUNK*CHANNELS*2)
         frames.append(soundData)
-        print("receiving audio...")
+        print("receiving audio from",addr,"...")
     udp.close()
 
 def play(stream, CHUNK):
