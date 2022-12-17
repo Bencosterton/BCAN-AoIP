@@ -4,7 +4,8 @@ from threading import Thread
 from ipaddress import IPv4Interface
 import time
 import sys
-#import struct
+import ntplib
+from datetime import datetime, timezone
 
 def wait(amount):
     time.sleep(amount)
@@ -26,20 +27,22 @@ print("""\
 
 wait(1)
 
+IP_input = input("receiver IP: ")
+IP = str(IP_input)
 frames = []
-#NTP server address input
-
-#IP_NTP_Input = input("transmitter IP: ")
-#TP_IP = str(IP_NTP_Input)
 
 # NTP Request
-
-
+try:
+    t = ntplib.NTPClient()
+    response = t.request('time.google.com', version=3)
+    response.offset
+    #print (datetime.fromtimestamp(response.tx_time, timezone.utc))
+except:
+    pass
 
 #Receiver address input
         
-IP_input = input("receiver IP: ")
-IP = str(IP_input)
+
 
 #Data receive
 
