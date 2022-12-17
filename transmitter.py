@@ -3,7 +3,6 @@ import pyaudio
 from threading import Thread
 import time
 import sys
-import os
 
 def wait(amount):
     time.sleep(amount)
@@ -26,9 +25,7 @@ wait(1)
 
 IP_input = input("Give me an IP, dude: ")
 IP = str(IP_input)
-UDP_input = input("And which UDP port?: ")
-UDP = int(UDP_input)
-
+UDP = 6980
 frames = []
 
 def udpStream():
