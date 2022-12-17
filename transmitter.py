@@ -1,22 +1,26 @@
-import pyaudio
 import socket
+import pyaudio
 from threading import Thread
 import time
 import sys
+import os
 
 def wait(amount):
     time.sleep(amount)
     print()
 
+NAME = socket.gethostname()
+T_IP = socket.gethostbyname(NAME)
+
 #Welcome message
-    print("""\
+print("""\
  _  _  _       _                                        ______   ______        ______  
 | || || |     | |                          _           (____  \ / _____)  /\  |  ___ \ 
 | || || | ____| | ____ ___  ____   ____   | |_  ___     ____)  ) /       /  \ | |   | |
 | ||_|| |/ _  ) |/ ___) _ \|    \ / _  )  |  _)/ _ \   |  __  (| |      / /\ \| |   | |
 | |___| ( (/ /| ( (__| |_| | | | ( (/ /   | |_| |_| |  | |__)  ) \_____| |__| | |   | |
  \______|\____)_|\____)___/|_|_|_|\____)   \___)___/   |______/ \______)______|_|   |_| 
-  TRANSMITTER                  """)
+  TRANSMITTER -""", NAME, T_IP,)
 
 wait(1)
 
