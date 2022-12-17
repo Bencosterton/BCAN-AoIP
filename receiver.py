@@ -13,6 +13,7 @@ def wait(amount):
 NAME = socket.gethostname()
 R_IP = socket.gethostbyname(NAME)
 
+
 #Welcome message
 print("""\
  _  _  _       _                                        ______   ______        ______  
@@ -28,8 +29,8 @@ wait(1)
 frames = []
 #NTP server address input
 
-IP_NTP_Input = input("transmitter IP: ")
-NTP_IP = str(IP_NTP_Input)
+#IP_NTP_Input = input("transmitter IP: ")
+#TP_IP = str(IP_NTP_Input)
 
 # NTP Request
 
