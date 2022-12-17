@@ -3,6 +3,8 @@ import pyaudio
 from threading import Thread
 import time
 import sys
+import ntplib
+from datetime import datetime, timezone
 
 def wait(amount):
     time.sleep(amount)
@@ -28,6 +30,14 @@ IP = str(IP_input)
 UDP = 6980
 frames = []
 
+#NTP Request
+
+t = ntplib.NTPClient()
+response = t.request('time.google.com', version=3)
+response.offset
+#print (datetime.fromtimestamp(response.tx_time, timezone.utc))
+
+#Data send
 def udpStream():
     udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
