@@ -14,7 +14,7 @@ A list of things that need to be done
 ### CLI Interface
 Usable Multi OS CLI interface 
 - [x] Windows 10
-- [x] Ubuntu Studio 22.04*
+- [x] Linux - Debian*
 - [x] macOS
 
 *Running app on Linux (tested with Ubuntu Studio 22.04) some erros flag reference ALSA, but it does still work.
