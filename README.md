@@ -17,7 +17,7 @@ Usable Multi OS CLI interface
 - [x] Linux - Debian*
 - [x] macOS
 
-*Running app on Linux (tested with Ubuntu Studio 22.04) some erros flag reference ALSA, but it does still work.
+*When running app on Linux some erros flag reference ALSA, but it does still work. Check install.txt for dependancies.
 
 ### Run on WiFi and Eth
 - [x] WiFi
