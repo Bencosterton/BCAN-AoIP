@@ -32,7 +32,7 @@ Unicast and Multicast
 - [x] Multi Input*
 - [x] Multi Output*
 
-* A given machine can use multiple inputs, and multiple output simultaniously, however, a transmitter cannot send multiple inputs to independent outputs on a single receiver. A connection between two given machines will only have one logical stream of audio. 
+\* A given machine can use multiple inputs, and multiple output simultaniously, however, a transmitter cannot send multiple inputs to independent outputs on a single receiver. A connection between two given machines will only have one logical stream of audio. 
 
 ### Input and Output device selection
 - [x] Input selection
