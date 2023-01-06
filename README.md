@@ -32,6 +32,10 @@ Unicast and Multicast
 - [ ] Multi Input
 - [x] Multi Output
 
+### Input and Output device selection
+- [x] Input selection
+- [ ] Output selection
+
 ### Sync
 - [ ] PTPv2
 - [x] NTP
