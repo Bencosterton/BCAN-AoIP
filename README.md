@@ -29,12 +29,14 @@ Usable Multi OS CLI interface
 ### MiMo
 Will need to be able to send multiple inputs to multiple outputs.
 Unicast and Multicast
-- [ ] Multi Input
-- [x] Multi Output
+- [x] Multi Input*
+- [x] Multi Output*
+
+* A given machine can use multiple inputs, and multiple output simultaniously, however, a transmitter cannot send multiple inputs to independent outputs on a single receiver. A connection between two given machines will only have one logical stream of audio. 
 
 ### Input and Output device selection
 - [x] Input selection
-- [ ] Output selection
+- [x] Output selection
 
 ### Sync
 - [ ] PTPv2
