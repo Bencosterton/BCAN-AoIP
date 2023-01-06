@@ -27,22 +27,32 @@ print("""\
 
 wait(1)
 
+#Audio output
+p = pyaudio.PyAudio()
+info = p.get_host_api_info_by_index(0)
+numdevices = info.get('deviceCount')
+
+for i in range(0, numdevices):
+	if (p.get_device_info_by_host_api_device_index(0, i).get('maxOutputChannels')) > 0:
+		print("Output Device id ", i, " - ", p.get_device_info_by_host_api_device_index(0, i).get('name'))
+
+Au_Output = input("Which output are we using?: ")
+Output = int(Au_Output)
+
+#Network output
 IP_input = input("receiver IP: ")
 IP = str(IP_input)
 frames = []
 
-# NTP Request
-try:
-    t = ntplib.NTPClient()
-    response = t.request('time.google.com', version=3)
-    response.offset
+#Timing
+
+#try:
+#    t = ntplib.NTPClient()
+#    response = t.request('time.google.com', version=3)
+#    response.offset
     #print (datetime.fromtimestamp(response.tx_time, timezone.utc))
-except:
-    pass
-
-#Receiver address input
-        
-
+#except:
+#    pass
 
 #Data receive
 
@@ -54,7 +64,7 @@ def udpStream(CHUNK):
     while True:
         soundData, addr = udp.recvfrom(CHUNK*CHANNELS*2)
         frames.append(soundData)
-        print("receiving audio from",addr,"...")
+        print(f"receiving audio from{addr}...")
     udp.close()
 
 def play(stream, CHUNK):
@@ -77,6 +87,7 @@ if __name__ == "__main__":
                     rate = RATE,
                     output = True,
                     frames_per_buffer = CHUNK,
+		            output_device_index = Output,
                     )
 
     udpThread  = Thread(target = udpStream, args=(CHUNK,))
