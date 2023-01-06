@@ -25,6 +25,19 @@ print("""\
 
 wait(1)
 
+#Input Audio
+p = pyaudio.PyAudio()
+info = p.get_host_api_info_by_index(0)
+numdevices = info.get('deviceCount')
+
+for i in range(0, numdevices):
+    if (p.get_device_info_by_host_api_device_index(0, i).get('maxInputChannels')) > 0:
+        print("Input Device id ", i, " - ", p.get_device_info_by_host_api_device_index(0, i).get('name'))
+
+Au_Input = input("Which input are we using?: ")
+Input = int(Au_Input)
+
+#Input Network
 IP_input = input("Give me an IP, dude: ")
 IP = str(IP_input)
 UDP = 6980
@@ -72,6 +85,7 @@ if __name__ == "__main__":
                     rate = RATE,
                     input = True,
                     frames_per_buffer = CHUNK,
+                    input_device_index = Input,
                     )
 
     AudioThread = Thread(target = record, args = (stream, CHUNK,))
