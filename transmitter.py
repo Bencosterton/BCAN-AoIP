@@ -1,3 +1,5 @@
+# Made by Ben Costerton
+# Contact bencosterton@gmail.com
 import socket
 import pyaudio
 from threading import Thread
