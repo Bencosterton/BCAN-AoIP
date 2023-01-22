@@ -1,11 +1,14 @@
 # BCAN
 Send UDP audio stream over any network between any OS
 
-![Untitled](https://user-images.githubusercontent.com/21957617/213914089-445dc832-5d47-44e4-8067-e576ac17a92b.png)
+![Untitled](https://user-images.githubusercontent.com/21957617/213914116-5178621d-544f-4777-a6e4-0b8786310590.png)
 
 
 BCAN is an ongoing project.
 The need to send audio over a private network, between different OS, without using existing Dante or Ravenna network arose, so this is a working solution. 
+
+ BCAN can be run from the python script, or installed in Windows from the setup.exe.
+ 
 Welcome to BCAN
 
 # To Do
