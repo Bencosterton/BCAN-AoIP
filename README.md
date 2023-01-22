@@ -1,7 +1,7 @@
 # BCAN
 Send UDP audio stream over any network between any OS
 
-![image](https://user-images.githubusercontent.com/21957617/213875784-c9d64d3c-4575-4386-b1a8-3c8a48347abf.png)
+![Untitled](https://user-images.githubusercontent.com/21957617/213914089-445dc832-5d47-44e4-8067-e576ac17a92b.png)
 
 
 BCAN is an ongoing project.
