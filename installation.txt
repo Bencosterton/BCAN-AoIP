@@ -17,3 +17,7 @@ sudo apt install build-essential portaudio19-dev
 sudo apt install build-essential python3.10-dev
 pip install pyaudio
 **Curently running the application on Linux throws up a few ALSA erros, but will run
+
+
+
+*** Depending on OS, and if you want to sync to NTP, grab the relevent ntp.py script from the NTP folder ***
