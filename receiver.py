@@ -6,25 +6,45 @@ from threading import Thread
 from ipaddress import IPv4Interface
 import time
 import sys
-import ntplib
-from datetime import datetime, timezone
+try:
+    import win_ntp
+except ImportError:
+    import unix_ntp
 
+#Windows ntp
+try:
+    win_ntp.gettime_ntp()
+except:
+    pass
+    
 def wait(amount):
     time.sleep(amount)
     print()
     
+def progressbar(it, prefix="", size=60, out=sys.stdout):
+    count = len(it)
+    def show(j):
+        x = int(size*j/count)
+        print("{}[{}{}] {}/{}".format(prefix, "#"*x, "."*(size-x), j, count), 
+                end='\r', file=out, flush=True)
+    show(0)
+    for i, item in enumerate(it):
+        yield item
+        show(i+1)
+    print(flush=True, file=out, end="\r")
+
 NAME = socket.gethostname()
 R_IP = socket.gethostbyname(NAME)
 
 
 #Welcome message
 print("""\
- _  _  _       _                                        ______   ______        ______  
-| || || |     | |                          _           (____  \ / _____)  /\  |  ___ \ 
-| || || | ____| | ____ ___  ____   ____   | |_  ___     ____)  ) /       /  \ | |   | |
-| ||_|| |/ _  ) |/ ___) _ \|    \ / _  )  |  _)/ _ \   |  __  (| |      / /\ \| |   | |
-| |___| ( (/ /| ( (__| |_| | | | ( (/ /   | |_| |_| |  | |__)  ) \_____| |__| | |   | |
- \______|\____)_|\____)___/|_|_|_|\____)   \___)___/   |______/ \______)______|_|   |_| 
+ ______   ______        ______     ______                                    
+(____  \ / _____)  /\  |  ___ \   |  ___ \                (_)                 
+ ____)  ) /       /  \ | |   | |  |  ___) ) ____ ____ ____ _ _   _ ____  ____ 
+|  __  (| |      / /\ \| |   | |  |  ___ ( / _  ) ___) _  ) | | | / _  )/ ___)
+| |__)  ) \_____| |__| | |   | |  | |   | ( (/ ( (__( (/ /| |\ V ( (/ /| |    
+|______/ \______)______|_|   |_|  |_|   |_|\____)____)____)_| \_/ \____)_|                                                                                  
   RECEIVER -""", NAME, R_IP)
 
 wait(1)
@@ -46,27 +66,21 @@ IP_input = input("receiver IP: ")
 IP = str(IP_input)
 frames = []
 
-#Timing
-
-#try:
-#    t = ntplib.NTPClient()
-#    response = t.request('time.google.com', version=3)
-#    response.offset
-    #print (datetime.fromtimestamp(response.tx_time, timezone.utc))
-#except:
-#    pass
-
 #Data receive
 
 def udpStream(CHUNK):
 
     udp = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    udp.bind((IP, 6980))
+    try:
+        udp.bind((IP, 14505))
+    except (OSError):
+        print("Wrong IP, this needs to be the IP of the NIC you are receving audio at")
     
     while True:
         soundData, addr = udp.recvfrom(CHUNK*CHANNELS*2)
         frames.append(soundData)
-        print(f"receiving audio from{addr}...")
+        for i in progressbar(range(10), f"receiving audio from{addr} ", 20):
+                time.sleep(0)
     udp.close()
 
 def play(stream, CHUNK):
