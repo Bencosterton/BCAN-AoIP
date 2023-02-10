@@ -1,7 +1,7 @@
 Windows 10:
 
-Run the BCAN Setup.exe file
-
+Make sure you are running Python 3.8+
+pip install pyaudio
 
 macOS
 
