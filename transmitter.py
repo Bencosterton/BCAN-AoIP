@@ -80,7 +80,10 @@ def udpStream():
 
 def record(stream, CHUNK):
     while True:
-        frames.append(stream.read(CHUNK))
+        try:
+            frames.append(stream.read(CHUNK))
+        except OSError:
+            wait (1)
 
 if __name__ == "__main__":
     CHUNK = 1024
